@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 class MobileApp extends Application {
     private String platform;
 

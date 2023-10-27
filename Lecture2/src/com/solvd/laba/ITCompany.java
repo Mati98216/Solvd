@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 public class ITCompany {
     private String companyName;
     private double hourlyRate;

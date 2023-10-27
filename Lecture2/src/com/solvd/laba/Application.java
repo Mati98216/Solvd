@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 class Application {
     private String appName;
     private int developmentHours;

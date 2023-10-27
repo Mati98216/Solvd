@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 class Database {
     private String dbName;
 

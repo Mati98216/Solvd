@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 class WebApp extends Application {
     private String framework;
 

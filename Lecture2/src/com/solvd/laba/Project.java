@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 class Project {
     private String projectName;
     private Customer customer;

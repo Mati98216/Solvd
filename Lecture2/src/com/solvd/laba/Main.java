@@ -1,3 +1,5 @@
+package com.solvd.laba;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,10 +10,10 @@ public class Main {
         Database database = new Database("MyDatabase");
         Project project = new Project("ProjectA", customer, mobileApp, database);
 
-        System.out.println("Project Name: " + project.getProjectName());
-        System.out.println("Customer Name: " + customer.getCustomerName());
-        System.out.println("Application Name: " + mobileApp.getAppName());
-        System.out.println("Database Name: " + database.getDbName());
+        System.out.println("com.solvd.laba.Project Name: " + project.getProjectName());
+        System.out.println("com.solvd.laba.Customer Name: " + customer.getCustomerName());
+        System.out.println("com.solvd.laba.Application Name: " + mobileApp.getAppName());
+        System.out.println("com.solvd.laba.Database Name: " + database.getDbName());
         System.out.println("Estimated Cost: $" + company.estimateCost(mobileApp.getDevelopmentHours()));
     }
 }
