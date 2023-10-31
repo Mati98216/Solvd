@@ -1,6 +1,6 @@
-package com.solvd.laba.itcompany;
+package com.solvd.laba.lecture2.itcompany;
 
-import com.solvd.laba.itcompany.Employee;
+import com.solvd.laba.lecture2.itcompany.Employee;
 
 import java.util.ArrayList;
 import java.util.List;

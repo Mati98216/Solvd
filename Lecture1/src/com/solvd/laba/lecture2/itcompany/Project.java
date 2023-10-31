@@ -1,4 +1,4 @@
-package com.solvd.laba.itcompany;
+package com.solvd.laba.lecture2.itcompany;
 
 public class Project {
     private String projectName;

@@ -1,6 +1,6 @@
-package com.solvd.laba.app;
+package com.solvd.laba.lecture2.app;
 
-import com.solvd.laba.itcompany.*;
+import com.solvd.laba.lecture2.itcompany.*;
 
 public class Main {
     public static void main(String[] args) {
