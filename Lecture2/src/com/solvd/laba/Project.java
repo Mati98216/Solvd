@@ -1,16 +1,14 @@
 package com.solvd.laba;
 
-class Project {
+public class Project {
     private String projectName;
-    private Customer customer;
-    private Application application;
-    private Database database;
+    private String description;
+    private double cost;
 
-    public Project(String projectName, Customer customer, Application application, Database database) {
+    public Project(String projectName, String description, double cost) {
         this.projectName = projectName;
-        this.customer = customer;
-        this.application = application;
-        this.database = database;
+        this.description = description;
+        this.cost = cost;
     }
 
     public String getProjectName() {
@@ -19,5 +17,21 @@ class Project {
 
     public void setProjectName(String projectName) {
         this.projectName = projectName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getCost() {
+        return cost;
+    }
+
+    public void setCost(double cost) {
+        this.cost = cost;
     }
 }

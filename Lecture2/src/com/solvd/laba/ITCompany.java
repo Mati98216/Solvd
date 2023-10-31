@@ -1,31 +1,37 @@
 package com.solvd.laba;
 
 public class ITCompany {
-    private String companyName;
-    private double hourlyRate;
+    private String name;
+    private int yearFounded;
+    private double revenue;
 
-    public ITCompany(String companyName, double hourlyRate) {
-        this.companyName = companyName;
-        this.hourlyRate = hourlyRate;
+    public ITCompany(String name, int yearFounded, double revenue) {
+        this.name = name;
+        this.yearFounded = yearFounded;
+        this.revenue = revenue;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getName() {
+        return name;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public double getHourlyRate() {
-        return hourlyRate;
+    public int getYearFounded() {
+        return yearFounded;
     }
 
-    public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
+    public void setYearFounded(int yearFounded) {
+        this.yearFounded = yearFounded;
     }
 
-    public double estimateCost(int hours) {
-        return hourlyRate * hours;
+    public double getRevenue() {
+        return revenue;
+    }
+
+    public void setRevenue(double revenue) {
+        this.revenue = revenue;
     }
 }
