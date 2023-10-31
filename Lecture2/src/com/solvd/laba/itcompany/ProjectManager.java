@@ -1,4 +1,4 @@
-package com.solvd.laba;
+package com.solvd.laba.itcompany;
 
 import java.util.ArrayList;
 import java.util.List;

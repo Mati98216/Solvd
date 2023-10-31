@@ -1,4 +1,4 @@
-package com.solvd.laba;
+package com.solvd.laba.itcompany;
 
 public class Employee {
     private String employeeName;
