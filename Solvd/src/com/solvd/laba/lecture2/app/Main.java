@@ -2,31 +2,63 @@ package com.solvd.laba.lecture2.app;
 
 import com.solvd.laba.lecture2.itcompany.*;
 
+import java.time.LocalDate;
+
 public class Main {
     public static void main(String[] args) {
-        ITCompany company = new ITCompany("TechSolutions Inc.", 2000, 5000000);
-        Service service = new Service("Website Development", 5000, "Custom website development");
-        Customer customer = new Customer("John Doe", "johndoe@example.com", "+1-555-123-4567");
-        Project project = new Project("E-commerce Website", "Online store development", 10000);
-        Employee employee = new Employee("Alice", 101, 60000);
-        Team team = new Team("Development Team");
-        team.addTeamMember(employee);
+        // Create a customer
+        Customer customer = new Customer("Customer 1", "customer@example.com", "123-456-7890");
+        customer.setHasPreviousProjects(false);
+        customer.setCompany("ABC Corp");
 
-        ProjectManager projectManager = new ProjectManager("Bob", 102, 80000);
-        projectManager.assignProject(project);
+        // Create a project
+        Project project = new Project("Sample Project", "Sample description", ProjectSize.MEDIUM, 100, customer);
+        project.setDueDate(LocalDate.of(2023, 11, 15));
+        project.setCompletionDate(LocalDate.of(2023, 11, 02));
 
-        Developer developer = new Developer("Charlie", 103, 70000);
-        developer.assignToProject(project);
+        // Create employees
+        Developer developer1 = new Developer("Dev 1", 1001, 70000);
+        Developer developer2 =  new Developer("Dev 2", 1002, 75000);
+        ProjectManager manager = new ProjectManager("PM 1", 2001, 90000);
+        Tester tester = new Tester("Tester 1", 3001, 65000);
 
-        Tester tester = new Tester("David", 104, 65000);
-        tester.testProject(project);
+        // Assign employees to the project
+        developer1.assignToProject(project);
+        developer2.assignToProject(project);
+        manager.assignToProject(project);
+        tester.assignToProject(project);
 
+        // Calculate and display employee salaries
+        displayEmployeeSalary(developer1);
+        displayEmployeeSalary(developer2);
+        displayEmployeeSalary(manager);
+        displayEmployeeSalary(tester);
 
-        System.out.println("Company Name: " + company.getName());
-        System.out.println("Service Name: " + service.getServiceName());
-        System.out.println("Customer Name: " + customer.getCustomerName());
-        System.out.println("Project Name: " + project.getProjectName());
+        // Display employee information using the overridden toString() method
+        System.out.println(developer1);
+        System.out.println(developer2);
+        System.out.println(manager);
+        System.out.println(tester);
 
+        // Additional functionality
+        displayAssignedProjects(developer1);
+        displayProjectStatus(project);
+    }
 
+    public static void displayEmployeeSalary(Employee employee) {
+        System.out.println(employee.getEmployeeName() + "'s salary: $" + employee.getSalary());
+    }
+
+    public static void displayAssignedProjects(Employee employee) {
+        System.out.println(employee.getEmployeeName() + " is assigned to the following projects:");
+        for (Project project : employee.getAssignedProjects()) {
+            System.out.println("- " + project.getProjectName());
+        }
+    }
+
+    public static void displayProjectStatus(Project project) {
+        System.out.println("Project status for " + project.getProjectName() + ":");
+        System.out.println("Completed: " + project.isCompleted());
+        System.out.println("Overdue: " + project.isOverdue());
     }
 }

@@ -2,24 +2,38 @@ package com.solvd.laba.lecture2.itcompany;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Developer extends Employee {
-    private List<Project> assignedProjects;
-
     public Developer(String employeeName, int employeeId, double salary) {
         super(employeeName, employeeId, salary);
-        assignedProjects = new ArrayList<>();
     }
 
-    public void assignToProject(Project project) {
-        assignedProjects.add(project);
+    @Override
+    protected double calculateAdditionalSalary(Project project) {
+        return project.getEstimatedCost() * 0.05;
     }
 
-    public void unassignFromProject(Project project) {
-        assignedProjects.remove(project);
+    // Override toString() method from Object class
+    @Override
+    public String toString() {
+        return "Developer: " + employeeName;
     }
 
-    public List<Project> getAssignedProjects() {
-        return assignedProjects;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Developer developer = (Developer) obj;
+        return employeeId == developer.employeeId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId);
     }
 }

@@ -1,25 +1,36 @@
 package com.solvd.laba.lecture2.itcompany;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class ProjectManager extends Employee {
-    private List<Project> managedProjects;
-
     public ProjectManager(String employeeName, int employeeId, double salary) {
         super(employeeName, employeeId, salary);
-        managedProjects = new ArrayList<>();
     }
 
-    public void assignProject(Project project) {
-        managedProjects.add(project);
+    @Override
+    protected double calculateAdditionalSalary(Project project) {
+        return project.getEstimatedCost() * 0.1;
     }
 
-    public void unassignProject(Project project) {
-        managedProjects.remove(project);
+    @Override
+    public String toString() {
+        return "Project Manager: " + employeeName;
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        ProjectManager manager = (ProjectManager) obj;
+        return employeeId == manager.employeeId;
     }
 
-    public List<Project> getManagedProjects() {
-        return managedProjects;
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId);
     }
+
 }

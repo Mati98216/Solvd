@@ -4,11 +4,14 @@ public class Customer {
     private String customerName;
     private String email;
     private String phoneNumber;
+    private String company;
+    private boolean hasPreviousProjects;
 
     public Customer(String customerName, String email, String phoneNumber) {
         this.customerName = customerName;
         this.email = email;
         this.phoneNumber = phoneNumber;
+        this.hasPreviousProjects = false;
     }
 
     public String getCustomerName() {
@@ -33,5 +36,21 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public boolean hasPreviousProjects() {
+        return hasPreviousProjects;
+    }
+
+    public void setHasPreviousProjects(boolean hasPreviousProjects) {
+        this.hasPreviousProjects = hasPreviousProjects;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
     }
 }

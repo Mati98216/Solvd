@@ -1,25 +1,36 @@
 package com.solvd.laba.lecture2.itcompany;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class Tester extends Employee {
-    private List<Project> testedProjects;
-
     public Tester(String employeeName, int employeeId, double salary) {
         super(employeeName, employeeId, salary);
-        testedProjects = new ArrayList<>();
     }
 
-    public void testProject(Project project) {
-        testedProjects.add(project);
+    @Override
+    protected double calculateAdditionalSalary(Project project) {
+        return project.getEstimatedCost() * 0.03;
     }
 
-    public void untestProject(Project project) {
-        testedProjects.remove(project);
+    @Override
+    public String toString() {
+        return "Tester: " + employeeName;
     }
 
-    public List<Project> getTestedProjects() {
-        return testedProjects;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Tester tester = (Tester) obj;
+        return employeeId == tester.employeeId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(employeeId);
     }
 }
