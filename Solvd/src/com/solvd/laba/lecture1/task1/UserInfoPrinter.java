@@ -1,4 +1,4 @@
-package com.solvd.laba.lacture1.task1;
+package com.solvd.laba.lecture1.task1;
 
 public class UserInfoPrinter {
     public static void main(String[] args) {

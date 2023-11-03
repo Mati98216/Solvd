@@ -1,4 +1,4 @@
-package com.solvd.laba.lacture1.task2;
+package com.solvd.laba.lecture1.task2;
 
 import java.util.Arrays;
 import java.util.Random;
