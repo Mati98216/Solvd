@@ -10,16 +10,15 @@ public abstract class Employee {
     protected List<Project> assignedProjects;
     protected int yearsOfWork;
     protected double hourlyRate;
-    protected int weeklyHours; // Dodajemy pole weeklyHours
+    protected int weeklyHours;
 
-    public Employee(String employeeName, int employeeId, double salary, int yearsOfWork, double hourlyRate, int weeklyHours) {
+    public Employee(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours) {
         this.employeeName = employeeName;
         this.employeeId = employeeId;
-        this.salary = salary;
         this.assignedProjects = new ArrayList<>();
         this.yearsOfWork = yearsOfWork;
         this.hourlyRate = hourlyRate;
-        this.weeklyHours = weeklyHours; // Inicjalizujemy weeklyHours
+        this.weeklyHours = weeklyHours;
     }
 
     public String getEmployeeName() {
@@ -52,21 +51,19 @@ public abstract class Employee {
 
     public void assignToProject(Project project, int overtimeHours) {
         assignedProjects.add(project);
-        updateSalary(project, project.getSize(), overtimeHours);
+        updateSalary(project, project.getSize());
     }
 
-    public void unassignFromProject(Project project, int overtimeHours) {
+    public void unAssignFromProject(Project project) {
         assignedProjects.remove(project);
-        updateSalary(project, project.getSize(), overtimeHours);
+        updateSalary(project, project.getSize());
     }
 
-    protected double evaluatePerformance() {
-        // Domyślna implementacja oceny wydajności pracownika
-        return 3.0; // Przeciętna wydajność
-    }
+    protected abstract double evaluatePerformance();
+
 
     protected double calculateBaseSalary() {
-        return hourlyRate * weeklyHours; // Używamy weeklyHours do obliczenia wynagrodzenia
+        return hourlyRate * weeklyHours; // We use weeklyHours to calculate wages
     }
 
     protected double calculateBonusForYearsOfWork() {
@@ -94,7 +91,7 @@ public abstract class Employee {
         return bonus;
     }
 
-    private void updateSalary(Project lastCompletedProject, ProjectSize projectSize, int overtimeHours) {
+    protected  void updateSalary(Project lastCompletedProject, ProjectSize projectSize) {
         double newSalary = calculateBaseSalary() + calculateBonusForYearsOfWork();
         if (lastCompletedProject != null && lastCompletedProject.getDueDate() != null && lastCompletedProject.getCompletionDate() != null) {
             newSalary += calculateProjectCompletionBonus(projectSize);

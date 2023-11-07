@@ -5,6 +5,8 @@ public class Customer {
     private String email;
     private String phoneNumber;
     private String company;
+    private Service service;
+    private int serviceDurationInMonths;
     private boolean hasPreviousProjects;
 
     public Customer(String customerName, String email, String phoneNumber) {
@@ -12,6 +14,8 @@ public class Customer {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.hasPreviousProjects = false;
+        this.service = null;
+        this.serviceDurationInMonths = 0;
     }
 
     public String getCustomerName() {
@@ -40,6 +44,18 @@ public class Customer {
 
     public boolean hasPreviousProjects() {
         return hasPreviousProjects;
+    }
+    public void subscribeToService(Service service, int durationInMonths) {
+        this.service = service;
+        this.serviceDurationInMonths = durationInMonths;
+    }
+
+    public Service getService() {
+        return service;
+    }
+
+    public int getServiceDurationInMonths() {
+        return serviceDurationInMonths;
     }
 
     public void setHasPreviousProjects(boolean hasPreviousProjects) {

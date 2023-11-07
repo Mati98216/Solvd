@@ -76,10 +76,6 @@ public class Project {
         this.size = size;
     }
 
-    public double getEstimatedCost() {
-        return estimatedCost;
-    }
-
     public Customer getCustomer() {
         return customer;
     }
@@ -107,5 +103,38 @@ public class Project {
 
     public boolean isOverdue() {
         return dueDate != null && completionDate != null && dueDate.isBefore(completionDate);
+    }
+    public double calculateMonthlyServiceCost() {
+        if (customer.getService() != null) {
+            double pricePerMonth = customer.getService().getPricePerMonth();
+            int serviceDurationInMonths = customer.getServiceDurationInMonths();
+            return pricePerMonth * serviceDurationInMonths;
+        }
+        return 0.0;
+    }
+    public double calculateProjectCost(Team team) {
+        double teamSalaries = 0.0;
+
+        for (Employee employee : team.getTeamMembers()) {
+            teamSalaries += employee.getSalary();
+        }
+
+        double minCost = teamSalaries * 1.5;
+        double discount = customer.hasPreviousProjects() ? 0 : 1000;
+        double monthlyServiceCost = calculateMonthlyServiceCost();
+
+        return minCost + discount + monthlyServiceCost;
+    }
+
+    public void assignTeam(Team team) {
+        for (Employee employee : team.getTeamMembers()) {
+            if (employee instanceof Developer) {
+                developers.add((Developer) employee);
+            } else if (employee instanceof ProjectManager) {
+                projectManagers.add((ProjectManager) employee);
+            } else if (employee instanceof Tester) {
+                testers.add((Tester) employee);
+            }
+        }
     }
 }

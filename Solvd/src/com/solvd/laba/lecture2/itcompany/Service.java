@@ -2,12 +2,12 @@ package com.solvd.laba.lecture2.itcompany;
 
 public class Service {
     private String serviceName;
-    private double price;
+    private double pricePerMonth;
     private String description;
 
-    public Service(String serviceName, double price, String description) {
+    public Service(String serviceName, double pricePerMonth, String description) {
         this.serviceName = serviceName;
-        this.price = price;
+        this.pricePerMonth = pricePerMonth;
         this.description = description;
     }
 
@@ -20,12 +20,12 @@ public class Service {
         this.serviceName = serviceName;
     }
 
-    public double getPrice() {
-        return price;
+    public double getPricePerMonth() {
+        return pricePerMonth;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setPricePerMonth(double price) {
+        this.pricePerMonth = pricePerMonth;
     }
 
     public String getDescription() {
