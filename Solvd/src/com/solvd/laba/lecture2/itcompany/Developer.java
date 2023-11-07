@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class Developer extends Employee {
-    public Developer(String employeeName, int employeeId, double salary) {
-        super(employeeName, employeeId, salary);
+    public Developer(String employeeName, int employeeId, double salary, int yearsOfWork, double hourlyRate) {
+        super(employeeName, employeeId, salary, yearsOfWork, hourlyRate);
     }
 
     @Override

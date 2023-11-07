@@ -113,26 +113,6 @@ public class Project {
         return testers;
     }
 
-    private void allocateResources() {
-        int developersNeeded = requirements / 2;
-        int projectManagersNeeded = requirements / 4;
-        int testersNeeded = requirements / 4;
-
-        for (int i = 0; i < developersNeeded; i++) {
-            Developer developer = new Developer("Developer " + (i + 1), i + 1000, 70000);
-            developers.add(developer);
-        }
-
-        for (int i = 0; i < projectManagersNeeded; i++) {
-            ProjectManager projectManager = new ProjectManager("Project Manager " + (i + 1), i + 2000, 80000);
-            projectManagers.add(projectManager);
-        }
-
-        for (int i = 0; i < testersNeeded; i++) {
-            Tester tester = new Tester("Tester " + (i + 1), i + 3000, 65000);
-            testers.add(tester);
-        }
-    }
 
     private void applyDiscount() {
         estimatedCost -= 1000;

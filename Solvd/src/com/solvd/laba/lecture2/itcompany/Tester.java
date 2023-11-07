@@ -3,13 +3,13 @@ package com.solvd.laba.lecture2.itcompany;
 import java.util.Objects;
 
 public class Tester extends Employee {
-    public Tester(String employeeName, int employeeId, double salary) {
-        super(employeeName, employeeId, salary);
+    public Tester(String employeeName, int employeeId, double salary, int yearsOfWork, double hourlyRate) {
+        super(employeeName, employeeId, salary, yearsOfWork, hourlyRate);
     }
 
     @Override
     protected double calculateAdditionalSalary(Project project) {
-        return project.getEstimatedCost() * 0.03;
+        return project.getEstimatedCost() * 0.04;
     }
 
     @Override
