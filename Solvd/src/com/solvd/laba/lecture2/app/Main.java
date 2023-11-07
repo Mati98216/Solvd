@@ -49,7 +49,7 @@ public class Main {
             } else if (employee instanceof Tester) {
                 ((Tester) employee).updateSalaryForProject(project, project.getSize());
             }
-            System.out.println(employee.toString() + ", Salary: " + employee.getSalary());
+            System.out.println(employee.toString());
         }
         // Calculate the cost of the project
         double projectCost = project.calculateProjectCost(team);
