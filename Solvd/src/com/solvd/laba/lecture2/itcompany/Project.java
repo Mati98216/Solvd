@@ -8,7 +8,6 @@ public class Project {
     private String projectName;
     private String description;
     private ProjectSize size;
-    private int requirements;
     private double estimatedCost;
     private Customer customer;
     private LocalDate dueDate;
@@ -20,11 +19,10 @@ public class Project {
 
 
 
-    public Project(String projectName, String description, ProjectSize size, int requirements, Customer customer) {
+    public Project(String projectName, String description, ProjectSize size, Customer customer) {
         this.projectName = projectName;
         this.description = description;
         this.size = size;
-        this.requirements = requirements;
         this.customer = customer;
         this.dueDate = null;
         this.completionDate = null;
@@ -32,9 +30,6 @@ public class Project {
         developers = new ArrayList<>();
         projectManagers = new ArrayList<>();
         testers = new ArrayList<>();
-
-        calculateEstimatedCost();
-        allocateResources();
 
         if (!customer.hasPreviousProjects()) {
             applyDiscount();
@@ -81,24 +76,12 @@ public class Project {
         this.size = size;
     }
 
-    public int getRequirements() {
-        return requirements;
-    }
-
-    public void setRequirements(int requirements) {
-        this.requirements = requirements;
-    }
-
     public double getEstimatedCost() {
         return estimatedCost;
     }
 
     public Customer getCustomer() {
         return customer;
-    }
-
-    public void calculateEstimatedCost() {
-        estimatedCost = size.getEstimatedTime() * size.getHourlyRate() * requirements;
     }
 
     public List<Developer> getDevelopers() {
@@ -112,6 +95,7 @@ public class Project {
     public List<Tester> getTesters() {
         return testers;
     }
+
 
 
     private void applyDiscount() {

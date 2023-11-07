@@ -1,39 +1,27 @@
 package com.solvd.laba.lecture2.itcompany;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 public class Developer extends Employee {
-    public Developer(String employeeName, int employeeId, double salary, int yearsOfWork, double hourlyRate) {
-        super(employeeName, employeeId, salary, yearsOfWork, hourlyRate);
+    public Developer(String employeeName, int employeeId, double salary, int yearsOfWork, double hourlyRate, int weeklyHours) {
+        super(employeeName, employeeId, salary, yearsOfWork, hourlyRate, weeklyHours);
     }
 
     @Override
-    protected double calculateAdditionalSalary(Project project) {
-        return project.getEstimatedCost() * 0.05;
+    protected double evaluatePerformance() {
+        // Implementacja oceny wydajności developera
+        // Przykład: ocena na podstawie liczby napisanych linii kodu
+        int linesOfCode = 1000; // Przykład: liczba napisanych linii kodu
+        if (linesOfCode > 1000) {
+            return 5.0; // Doskonała wydajność
+        } else if (linesOfCode > 500) {
+            return 4.0; // Dobra wydajność
+        } else {
+            return 3.0; // Przeciętna wydajność
+        }
     }
 
-    // Override toString() method from Object class
     @Override
     public String toString() {
-        return "Developer: " + employeeName;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        }
-        Developer developer = (Developer) obj;
-        return employeeId == developer.employeeId;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(employeeId);
+        return "Developer: " + employeeName + ", Salary: " + salary;
     }
 }
