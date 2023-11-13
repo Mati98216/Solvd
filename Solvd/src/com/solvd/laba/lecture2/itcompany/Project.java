@@ -15,7 +15,7 @@ public class Project {
     private List<Developer> developers;
     private List<ProjectManager> projectManagers;
     private List<Tester> testers;
-
+    private Team assignedTeam;
 
 
 
@@ -26,6 +26,7 @@ public class Project {
         this.customer = customer;
         this.dueDate = null;
         this.completionDate = null;
+        this.assignedTeam = null;
 
         developers = new ArrayList<>();
         projectManagers = new ArrayList<>();
@@ -34,6 +35,13 @@ public class Project {
         if (!customer.hasPreviousProjects()) {
             applyDiscount();
         }
+    }
+    public void assignedTeam(Team team) {
+        this.assignedTeam = team;
+    }
+
+    public Team getAssignedTeam() {
+        return assignedTeam;
     }
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
@@ -126,7 +134,7 @@ public class Project {
         return minCost + discount + monthlyServiceCost;
     }
 
-    public void assignTeam(Team team) {
+    public void assignToTeam(Team team) {
         for (Employee employee : team.getTeamMembers()) {
             if (employee instanceof Developer) {
                 developers.add((Developer) employee);
@@ -136,5 +144,17 @@ public class Project {
                 testers.add((Tester) employee);
             }
         }
+    }
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Project Name: ").append(projectName).append("\n");
+        builder.append("Project Description: ").append(description).append("\n");
+        builder.append("Project Size: ").append(size).append("\n");
+        builder.append("Customer: ").append(customer.getCustomerName()).append("\n");
+        builder.append("Due Date: ").append(dueDate).append("\n");
+        builder.append("Completion Date: ").append(completionDate).append("\n");
+
+        return builder.toString();
     }
 }
