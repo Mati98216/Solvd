@@ -26,6 +26,7 @@ public final class ITCompany {
     public void addEmployee(Employee employee) {
         employees.add(employee);
     }
+
     public void assignTeam(Team team) {
         this.assignedTeam = team;
     }

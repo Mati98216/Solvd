@@ -1,5 +1,6 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.exceptions.ServiceSubscriptionException;
 import com.solvd.laba.lecture2.interfaces.CustomerServicesInterface;
 
 public class Customer implements CustomerServicesInterface {
@@ -19,6 +20,12 @@ public class Customer implements CustomerServicesInterface {
         this.service = null;
         this.serviceDurationInMonths = 0;
     }
+    public Customer() {
+        this.hasPreviousProjects = false;
+        this.service = null;
+        this.serviceDurationInMonths = 0;
+    }
+
 
     public String getCustomerName() {
         return customerName;
@@ -69,7 +76,11 @@ public class Customer implements CustomerServicesInterface {
     }
 
     @Override
-    public void subscribeToService(Service service, int durationInMonths) {
+    public void subscribeToService(Service service, int durationInMonths) throws ServiceSubscriptionException {
+        if (service == null || durationInMonths <= 0) {
+            throw new ServiceSubscriptionException("Invalid service subscription parameters.");
+        }
+
         this.service = service;
         this.serviceDurationInMonths = durationInMonths;
     }

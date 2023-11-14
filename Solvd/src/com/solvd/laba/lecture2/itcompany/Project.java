@@ -1,5 +1,6 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.exceptions.ProjectAssignmentException;
 import com.solvd.laba.lecture2.interfaces.ProjectOperationsInterface;
 import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
 
@@ -139,6 +140,10 @@ public class Project  implements ProjectOperationsInterface{
 
     @Override
     public void assignToTeam(Team team) {
+        if (team == null || team.getTeamMembers().isEmpty()) {
+            throw new ProjectAssignmentException("Cannot assign an empty or null team to the project.");
+        }
+
         for (Employee employee : team.getTeamMembers()) {
             if (employee instanceof Developer) {
                 developers.add((Developer) employee);

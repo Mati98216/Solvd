@@ -1,5 +1,6 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.exceptions.SalaryUpdateException;
 import com.solvd.laba.lecture2.interfaces.EmployeeActionsInterface;
 
 import java.util.ArrayList;
@@ -84,12 +85,16 @@ public abstract class Employee implements EmployeeActionsInterface {
         return bonus;
     }
 
-    protected  void updateSalary(Project lastCompletedProject, ProjectSize projectSize) {
-        double newSalary = calculateBaseSalary() + calculateBonusForYearsOfWork();
-        if (lastCompletedProject != null && lastCompletedProject.getDueDate() != null && lastCompletedProject.getCompletionDate() != null) {
-            newSalary += calculateProjectCompletionBonus(projectSize);
+    protected void updateSalary(Project lastCompletedProject, ProjectSize projectSize) throws SalaryUpdateException {
+        try {
+            double newSalary = calculateBaseSalary() + calculateBonusForYearsOfWork();
+            if (lastCompletedProject != null && lastCompletedProject.getDueDate() != null && lastCompletedProject.getCompletionDate() != null) {
+                newSalary += calculateProjectCompletionBonus(projectSize);
+            }
+            setSalary(newSalary);
+        } catch (Exception e) {
+            throw new SalaryUpdateException("Error updating salary: " + e.getMessage());
         }
-        setSalary(newSalary);
     }
     @Override
     public List<Employee> searchEmployees(String searchTerm) {

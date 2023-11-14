@@ -1,0 +1,300 @@
+12:06:56.755 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+12:06:56.762 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+12:06:56.762 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+12:06:56.762 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Customer Name
+Due Date: null
+Completion Date: null
+
+12:06:56.762 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+12:06:56.763 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+12:06:56.763 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:06:56.763 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+12:06:56.767 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Customer Name
+Email: customer@email.com
+Phone Number: 123-456-789
+Monthly Service Cost: $300.0
+12:06:56.767 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+12:06:56.767 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:06:56.767 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+12:06:56.767 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+12:06:56.768 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+12:06:56.768 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+12:06:56.768 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+12:06:56.768 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+12:06:56.771 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+12:06:56.771 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+12:07:47.956 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+12:07:47.967 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+12:07:47.967 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+12:07:47.967 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Customer Name
+Due Date: null
+Completion Date: null
+
+12:07:47.967 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+12:07:47.968 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+12:07:47.968 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:07:47.969 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+12:07:47.974 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Customer Name
+Email: customer@email.com
+Phone Number: 123-456-789
+Monthly Service Cost: $300.0
+12:07:47.975 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+12:07:47.975 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:07:47.975 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+12:07:47.975 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+12:07:47.975 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+12:07:47.976 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+12:07:47.976 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+12:07:47.976 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+12:07:47.981 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+12:07:47.981 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+12:49:47.736 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+12:49:47.744 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+12:49:47.744 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+12:49:47.744 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Customer Name
+Due Date: null
+Completion Date: null
+
+12:49:47.745 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+12:49:47.745 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+12:49:47.745 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:49:47.745 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+12:49:47.750 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Customer Name
+Email: customer@email.com
+Phone Number: 123-456-789
+Monthly Service Cost: $300.0
+12:49:47.750 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+12:49:47.750 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+12:49:47.751 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+12:49:47.751 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+12:49:47.751 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+12:49:47.751 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+12:49:47.751 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+12:49:47.752 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+12:49:47.755 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+12:49:47.755 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+13:15:16.249 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+13:15:16.257 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+13:15:16.258 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+13:15:16.258 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Customer Name
+Due Date: null
+Completion Date: null
+
+13:15:16.258 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+13:15:16.258 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+13:15:16.258 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+13:15:16.259 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+13:15:16.264 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Customer Name
+Email: customer@email.com
+Phone Number: 123-456-789
+Monthly Service Cost: $300.0
+13:15:16.264 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+13:15:16.264 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+13:15:16.264 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+13:15:16.264 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+13:15:16.265 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+13:15:16.265 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+13:15:16.265 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+13:15:16.266 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+13:15:16.269 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+13:15:16.270 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+13:25:51.825 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+13:25:51.834 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+13:25:51.834 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+13:25:51.834 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Customer Name
+Due Date: null
+Completion Date: null
+
+13:25:51.835 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+13:25:51.835 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+13:25:51.835 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+13:25:51.836 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+13:25:51.840 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Customer Name
+Email: customer@email.com
+Phone Number: 123-456-789
+Monthly Service Cost: $300.0
+13:25:51.840 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+13:25:51.840 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+13:25:51.840 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+13:25:51.841 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+13:25:51.841 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+13:25:51.841 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+13:25:51.841 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+13:25:51.842 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+13:25:51.846 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+13:25:51.846 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+14:34:33.520 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+14:34:33.545 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+14:34:33.545 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+14:34:33.546 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: null
+Due Date: null
+Completion Date: null
+
+14:34:33.547 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+14:34:33.547 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+14:34:33.547 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:34:33.548 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+14:34:33.556 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: null
+Email: null
+Phone Number: null
+Monthly Service Cost: $300.0
+14:34:33.557 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+14:34:33.557 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:34:33.557 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+14:34:33.557 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+14:34:33.557 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+14:34:33.558 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+14:34:33.558 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+14:34:33.558 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+14:34:33.564 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+14:34:33.565 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+14:36:24.130 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+14:36:24.140 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+14:36:24.141 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+14:36:24.141 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: null
+Due Date: null
+Completion Date: null
+
+14:36:24.142 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+14:36:24.142 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+14:36:24.142 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:36:24.143 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: null
+Email: null
+Phone Number: null
+Monthly Service Cost: $300.0
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+14:36:24.152 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+14:36:24.153 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+14:36:24.153 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+14:36:24.153 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+14:36:24.157 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+14:36:24.157 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+14:37:30.673 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+14:37:30.682 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+14:37:30.682 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+14:37:30.682 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: null
+Due Date: null
+Completion Date: null
+
+14:37:30.683 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+14:37:30.683 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+14:37:30.683 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:37:30.683 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+14:37:30.687 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: null
+Email: null
+Phone Number: null
+Monthly Service Cost: $300.0
+14:37:30.688 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+14:37:30.688 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:37:30.688 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+14:37:30.688 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+14:37:30.688 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+14:37:30.689 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+14:37:30.689 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+14:37:30.689 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+14:37:30.693 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+14:37:30.693 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+14:39:10.802 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+14:39:10.813 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+14:39:10.813 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+14:39:10.813 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: null
+Due Date: null
+Completion Date: null
+
+14:39:10.813 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+14:39:10.813 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+14:39:10.814 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:39:10.814 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+14:39:10.818 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: null
+Email: null
+Phone Number: null
+Monthly Service Cost: $300.0
+14:39:10.818 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+14:39:10.819 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:39:10.819 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+14:39:10.819 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+14:39:10.819 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+14:39:10.819 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+14:39:10.820 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+14:39:10.820 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+14:39:10.823 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+14:39:10.824 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.
+14:39:40.714 [main] INFO  com.solvd.laba.lecture2.app.Main - Application started.
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Cost: 10180.0
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Information:
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Name: Project Name
+Project Description: Project Description
+Project Size: MEDIUM
+Customer: Bob Johnson
+Due Date: null
+Completion Date: null
+
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Search Results for 'Dev':
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 1, Salary: 1300.0
+14:39:40.729 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:39:40.730 [main] INFO  com.solvd.laba.lecture2.app.Main - Monthly Service Cost for Customer 1: $300.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Customer Information:
+Name: Bob Johnson
+Email: bob.johnson@email.com
+Phone Number: 555-123-456
+Monthly Service Cost: $300.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - 
+Updated Team Members:
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Developer: Dev 2, Salary: 1620.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Tester: Tester, Salary: 1000.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Project Manager: Project Manager, Salary: 2200.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 1: 4.0
+14:39:40.734 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Developer 2: 3.0
+14:39:40.735 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Project Manager: 5.0
+14:39:40.735 [main] INFO  com.solvd.laba.lecture2.app.Main - Evaluate Performance for Tester: 4.0
+14:39:40.739 [main] INFO  com.solvd.laba.lecture2.app.Main - Current projects: 1
+14:39:40.739 [main] INFO  com.solvd.laba.lecture2.app.Main - Application completed.

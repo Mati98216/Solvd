@@ -3,16 +3,26 @@ package com.solvd.laba.lecture2.app;
 
 import com.solvd.laba.lecture2.interfaces.TaskManagementServiceInterface;
 import com.solvd.laba.lecture2.itcompany.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-import java.time.LocalDate;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class Main {
-    public static void main(String[] args) {
+    static {
+        System.setProperty("log4j.configurationFile", "log4j2.xml");
+    }
+    public static final Logger logger = LogManager.getLogger(Main.class);
+    public static void main(String[] args) throws Exception {
+        logger.info("Application started.");
         ITCompany company = new ITCompany("My IT Company", 2000, 1000000.0);
 
-        Customer customer = new Customer("Customer Name", "customer@email.com", "123-456-789");
+        Customer customer = new Customer();
+        String csvFilePath = "src/com/solvd/laba/lecture2/resources/customer_data";
+        CustomerDataLoader.loadCustomerDataFromCSV(csvFilePath, customer);
         // Create and add projects to the company
         Project project = new Project("Project Name", "Project Description", ProjectSize.MEDIUM, customer);
         company.addProject(project);
@@ -42,11 +52,11 @@ public class Main {
         company.calculateAndDisplayTeamSalaries(project);
         // Calculate the project cost
         double projectCost = company.calculateTotalProjectCost(team);
-        System.out.println("Project Cost: " + projectCost);
+        logger.info("Project Cost: " + projectCost);
 
         // Display project information
-        System.out.println("Project Information:");
-        System.out.println(project);
+        logger.info("Project Information:");
+        logger.info(project.toString());
 
         // Search for employees based on a search term (e.g., "Dev")
         String searchTerm = "Dev";
@@ -56,33 +66,38 @@ public class Main {
             searchResults.addAll(employee.searchEmployees(searchTerm));
         }
         // Display search results
-        System.out.println("Search Results for '" + searchTerm + "':");
+        logger.info("Search Results for '" + searchTerm + "':");
         for (Employee result : searchResults) {
-            System.out.println(result.toString());
+            logger.info(result.toString());
         }
         Service service1 = new Service("Service 1", 50.0, "Description 1");
         Service service2 = new Service("Service 2", 75.0, "Description 2");
 
-        customer.subscribeToService(service1, 6); // Subskrypcja usługi na 6 miesięcy
+        customer.subscribeToService(service1, 6); //Subscription to the service for 6 months
         double monthlyCost1 = customer.calculateMonthlyServiceCost();
-        // Oblicz miesięczny koszt usług dla klientów
-        System.out.println("\nMonthly Service Cost for Customer 1: $" + monthlyCost1);
-        System.out.println(customer.toString());
+        // Monthly Service Cost for Customer
+        logger.info("Monthly Service Cost for Customer 1: $" + monthlyCost1);
+        logger.info(customer.toString());
 
         team.removeTeamMember(developer1);
-        System.out.println("\nUpdated Team Members:");
+        logger.info("\nUpdated Team Members:");
         for (Employee employee : team.getTeamMembers()) {
-            System.out.println(employee.toString());
+            logger.info(employee.toString());
         }
-        System.out.println("Evaluate Performance for Developer 1: " + developer1.evaluatePerformance(646));
-        System.out.println("Evaluate Performance for Developer 1: " + developer2.evaluatePerformance(300));
-        System.out.println("Evaluate Performance for Developer 1: " + projectManager.evaluatePerformance(11));
-        System.out.println("Evaluate Performance for Developer 1: " + tester.evaluatePerformance(57));
+        logger.info("Evaluate Performance for Developer 1: " + developer1.evaluatePerformance(646));
+        logger.info("Evaluate Performance for Developer 2: " + developer2.evaluatePerformance(300));
+        logger.info("Evaluate Performance for Project Manager: " + projectManager.evaluatePerformance(11));
+        logger.info("Evaluate Performance for Tester: " + tester.evaluatePerformance(57));
+
 
         TaskManagementServiceInterface taskManagementService = new TaskManagementServiceImpl();
         taskManagementService.createTask(project, "Task 1", "Implement feature X");
         taskManagementService.assignTask(team, "Task 1");
         taskManagementService.completeTask(team, "Task 1");
-        System.out.println("Current projects: "+ Project.getProjectCounter());
+        // Log task management actions
+        logger.info("Current projects: " + Project.getProjectCounter());
+
+        // Log other relevant information
+        logger.info("Application completed.");
     }
 }

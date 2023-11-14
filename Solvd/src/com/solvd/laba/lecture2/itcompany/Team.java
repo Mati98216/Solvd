@@ -1,5 +1,6 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.exceptions.TeamManagementException;
 import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
 import com.solvd.laba.lecture2.itcompany.Employee;
 
@@ -20,6 +21,10 @@ public class Team implements TeamOperationsInterface {
     }
     @Override
     public void removeTeamMember(Employee employee) {
+        if (employee == null || !teamMembers.contains(employee)) {
+            throw new TeamManagementException("Invalid team member removal parameters.");
+        }
+
         teamMembers.remove(employee);
     }
 
