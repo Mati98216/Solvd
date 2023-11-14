@@ -3,10 +3,10 @@ package com.solvd.laba.lecture2.itcompany;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ITCompany {
-    private String name;
-    private int yearFounded;
-    private double revenue;
+public final class ITCompany {
+    private final String name;
+    private final int yearFounded;
+    private  double revenue;
     private List<Project> projects;
     private List<Employee> employees;
     private Team assignedTeam;
@@ -59,7 +59,9 @@ public class ITCompany {
             System.out.println(employee.toString());
         }
     }
-
+    public List<Employee> getEmployees() {
+        return employees;
+    }
 
     public double calculateTotalProjectCost(Team team) {
         double totalProjectCost = 0.0;
@@ -74,17 +76,13 @@ public class ITCompany {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public int getYearFounded() {
         return yearFounded;
     }
 
-    public void setYearFounded(int yearFounded) {
-        this.yearFounded = yearFounded;
-    }
+
 
     public double getRevenue() {
         return revenue;

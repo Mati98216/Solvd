@@ -10,10 +10,10 @@ public class Tester extends Employee {
         updateSalary(project, projectSize);
     }
     @Override
-    protected double evaluatePerformance() {
+    public double evaluatePerformance(int numberOfBugsFound) {
         // Implementation of tester performance evaluation
         // Evaluation based on the number of software bugs found
-        int numberOfBugsFound = 50;
+
         if (numberOfBugsFound > 100) {
             return 5.0;
         } else if (numberOfBugsFound > 50) {

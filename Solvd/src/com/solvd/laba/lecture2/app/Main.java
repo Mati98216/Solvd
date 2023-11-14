@@ -1,9 +1,11 @@
 package com.solvd.laba.lecture2.app;
 
 
+import com.solvd.laba.lecture2.interfaces.TaskManagementServiceInterface;
 import com.solvd.laba.lecture2.itcompany.*;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -25,6 +27,8 @@ public class Main {
         company.addEmployee(developer2);
         company.addEmployee(projectManager);
         company.addEmployee(tester);
+
+
         // Create a team and add employees to it
         Team team = new Team("Development Team");
         team.addTeamMember(developer1);
@@ -43,5 +47,42 @@ public class Main {
         // Display project information
         System.out.println("Project Information:");
         System.out.println(project);
+
+        // Search for employees based on a search term (e.g., "Dev")
+        String searchTerm = "Dev";
+        List<Employee> searchResults = new ArrayList<>();
+
+        for (Employee employee : company.getEmployees()) {
+            searchResults.addAll(employee.searchEmployees(searchTerm));
+        }
+        // Display search results
+        System.out.println("Search Results for '" + searchTerm + "':");
+        for (Employee result : searchResults) {
+            System.out.println(result.toString());
+        }
+        Service service1 = new Service("Service 1", 50.0, "Description 1");
+        Service service2 = new Service("Service 2", 75.0, "Description 2");
+
+        customer.subscribeToService(service1, 6); // Subskrypcja usługi na 6 miesięcy
+        double monthlyCost1 = customer.calculateMonthlyServiceCost();
+        // Oblicz miesięczny koszt usług dla klientów
+        System.out.println("\nMonthly Service Cost for Customer 1: $" + monthlyCost1);
+        System.out.println(customer.toString());
+
+        team.removeTeamMember(developer1);
+        System.out.println("\nUpdated Team Members:");
+        for (Employee employee : team.getTeamMembers()) {
+            System.out.println(employee.toString());
+        }
+        System.out.println("Evaluate Performance for Developer 1: " + developer1.evaluatePerformance(646));
+        System.out.println("Evaluate Performance for Developer 1: " + developer2.evaluatePerformance(300));
+        System.out.println("Evaluate Performance for Developer 1: " + projectManager.evaluatePerformance(11));
+        System.out.println("Evaluate Performance for Developer 1: " + tester.evaluatePerformance(57));
+
+        TaskManagementServiceInterface taskManagementService = new TaskManagementServiceImpl();
+        taskManagementService.createTask(project, "Task 1", "Implement feature X");
+        taskManagementService.assignTask(team, "Task 1");
+        taskManagementService.completeTask(team, "Task 1");
+        System.out.println("Current projects: "+ Project.getProjectCounter());
     }
 }

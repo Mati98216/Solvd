@@ -1,10 +1,13 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.interfaces.ProjectOperationsInterface;
+import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Project {
+public class Project  implements ProjectOperationsInterface{
     private String projectName;
     private String description;
     private ProjectSize size;
@@ -16,8 +19,11 @@ public class Project {
     private List<ProjectManager> projectManagers;
     private List<Tester> testers;
     private Team assignedTeam;
+    private static int projectCounter;
 
-
+    static {
+        projectCounter = 0;
+    }
 
     public Project(String projectName, String description, ProjectSize size, Customer customer) {
         this.projectName = projectName;
@@ -35,11 +41,13 @@ public class Project {
         if (!customer.hasPreviousProjects()) {
             applyDiscount();
         }
+        projectCounter++;
     }
+
     public void assignedTeam(Team team) {
         this.assignedTeam = team;
     }
-
+    @Override
     public Team getAssignedTeam() {
         return assignedTeam;
     }
@@ -105,14 +113,8 @@ public class Project {
     private void applyDiscount() {
         estimatedCost -= 1000;
     }
-    public boolean isCompleted() {
-        return completionDate != null;
-    }
 
-    public boolean isOverdue() {
-        return dueDate != null && completionDate != null && dueDate.isBefore(completionDate);
-    }
-    public double calculateMonthlyServiceCost() {
+    public final  double calculateMonthlyServiceCost() {
         if (customer.getService() != null) {
             double pricePerMonth = customer.getService().getPricePerMonth();
             int serviceDurationInMonths = customer.getServiceDurationInMonths();
@@ -120,6 +122,7 @@ public class Project {
         }
         return 0.0;
     }
+    @Override
     public double calculateProjectCost(Team team) {
         double teamSalaries = 0.0;
 
@@ -134,6 +137,7 @@ public class Project {
         return minCost + discount + monthlyServiceCost;
     }
 
+    @Override
     public void assignToTeam(Team team) {
         for (Employee employee : team.getTeamMembers()) {
             if (employee instanceof Developer) {
@@ -144,6 +148,9 @@ public class Project {
                 testers.add((Tester) employee);
             }
         }
+    }
+    public static int getProjectCounter() {
+        return projectCounter;
     }
     @Override
     public String toString() {

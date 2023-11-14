@@ -1,9 +1,11 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.interfaces.EmployeeActionsInterface;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Employee {
+public abstract class Employee implements EmployeeActionsInterface {
     protected String employeeName;
     protected int employeeId;
     protected double salary;
@@ -49,17 +51,8 @@ public abstract class Employee {
         return assignedProjects;
     }
 
-    public void assignToProject(Project project, int overtimeHours) {
-        assignedProjects.add(project);
-        updateSalary(project, project.getSize());
-    }
 
-    public void unAssignFromProject(Project project) {
-        assignedProjects.remove(project);
-        updateSalary(project, project.getSize());
-    }
-
-    protected abstract double evaluatePerformance();
+    protected abstract double evaluatePerformance(int value);
 
 
     protected double calculateBaseSalary() {
@@ -98,10 +91,21 @@ public abstract class Employee {
         }
         setSalary(newSalary);
     }
+    @Override
+    public List<Employee> searchEmployees(String searchTerm) {
+        List<Employee> searchResults = new ArrayList<>();
+
+        if (employeeName.toLowerCase().contains(searchTerm.toLowerCase())) {
+            searchResults.add(this);
+        }
+
+        return searchResults;
+    }
 
     @Override
     public String toString() {
         return "Employee: " + employeeName + ", Salary: " + salary;
     }
+
 }
 

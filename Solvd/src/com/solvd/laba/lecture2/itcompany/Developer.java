@@ -3,7 +3,7 @@ package com.solvd.laba.lecture2.itcompany;
 
 import java.util.Objects;
 
-public class Developer extends Employee {
+public class Developer extends Employee  {
     public Developer(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours) {
         super(employeeName, employeeId, yearsOfWork, hourlyRate, weeklyHours);
     }
@@ -11,11 +11,12 @@ public class Developer extends Employee {
         updateSalary(project, projectSize);
     }
 
+
+
     @Override
-    protected double evaluatePerformance() {
+    public double evaluatePerformance(int linesOfCode) {
         // Implementation of developer performance evaluation
         // Evaluation based on the number of lines of code written
-        int linesOfCode = 1000;
         if (linesOfCode > 1000) {
             return 5.0;
         } else if (linesOfCode > 500) {

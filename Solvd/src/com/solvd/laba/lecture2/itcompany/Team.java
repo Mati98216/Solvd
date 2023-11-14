@@ -1,11 +1,12 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
 import com.solvd.laba.lecture2.itcompany.Employee;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team {
+public class Team implements TeamOperationsInterface {
     private String teamName;
     private List<Employee> teamMembers;
 
@@ -13,11 +14,11 @@ public class Team {
         this.teamName = teamName;
         this.teamMembers = new ArrayList<>();
     }
-
+    @Override
     public void addTeamMember(Employee employee) {
         teamMembers.add(employee);
     }
-
+    @Override
     public void removeTeamMember(Employee employee) {
         teamMembers.remove(employee);
     }

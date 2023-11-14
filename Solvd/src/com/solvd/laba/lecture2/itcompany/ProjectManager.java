@@ -10,10 +10,9 @@ public class ProjectManager extends Employee {
         updateSalary(project, projectSize);
     }
     @Override
-    protected double evaluatePerformance() {
+    public double evaluatePerformance(int projectsDeliveredOnTime) {
         // Implementation of project manager performance evaluation
         // Evaluation based on project delivery dates
-        int projectsDeliveredOnTime = 8;
         if (projectsDeliveredOnTime > 10) {
             return 5.0;
         } else if (projectsDeliveredOnTime > 5) {

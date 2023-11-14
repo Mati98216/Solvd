@@ -1,6 +1,8 @@
 package com.solvd.laba.lecture2.itcompany;
 
-public class Customer {
+import com.solvd.laba.lecture2.interfaces.CustomerServicesInterface;
+
+public class Customer implements CustomerServicesInterface {
     private String customerName;
     private String email;
     private String phoneNumber;
@@ -45,10 +47,6 @@ public class Customer {
     public boolean hasPreviousProjects() {
         return hasPreviousProjects;
     }
-    public void subscribeToService(Service service, int durationInMonths) {
-        this.service = service;
-        this.serviceDurationInMonths = durationInMonths;
-    }
 
     public Service getService() {
         return service;
@@ -68,5 +66,28 @@ public class Customer {
 
     public void setCompany(String company) {
         this.company = company;
+    }
+
+    @Override
+    public void subscribeToService(Service service, int durationInMonths) {
+        this.service = service;
+        this.serviceDurationInMonths = durationInMonths;
+    }
+
+    @Override
+    public double calculateMonthlyServiceCost() {
+        if (service != null) {
+            double pricePerMonth = service.getPricePerMonth();
+            return pricePerMonth * serviceDurationInMonths;
+        }
+        return 0.0;
+    }
+    @Override
+    public String toString() {
+        return "Customer Information:\n" +
+                "Name: " + getCustomerName() + "\n" +
+                "Email: " + getEmail() + "\n" +
+                "Phone Number: " + getPhoneNumber() + "\n" +
+                "Monthly Service Cost: $" + calculateMonthlyServiceCost();
     }
 }
