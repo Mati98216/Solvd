@@ -2,13 +2,12 @@ package com.solvd.laba.lecture2.itcompany;
 
 import com.solvd.laba.lecture2.exceptions.ProjectAssignmentException;
 import com.solvd.laba.lecture2.interfaces.ProjectOperationsInterface;
-import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Project  implements ProjectOperationsInterface{
+public class Project  implements ProjectOperationsInterface {
     private String projectName;
     private String description;
     private ProjectSize size;

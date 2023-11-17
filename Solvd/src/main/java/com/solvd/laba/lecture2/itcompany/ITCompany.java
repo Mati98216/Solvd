@@ -1,6 +1,5 @@
 package com.solvd.laba.lecture2.itcompany;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public final class ITCompany {

@@ -2,7 +2,6 @@ package com.solvd.laba.lecture2.itcompany;
 
 import com.solvd.laba.lecture2.exceptions.TeamManagementException;
 import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
-import com.solvd.laba.lecture2.itcompany.Employee;
 
 import java.util.ArrayList;
 import java.util.List;

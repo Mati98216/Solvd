@@ -22,7 +22,7 @@ public class Main {
         ITCompany company = new ITCompany("My IT Company", 2000, 1000000.0);
 
         Customer customer = new Customer();
-        String csvFilePath = "src/com/solvd/laba/lecture2/resources/customer_data";
+        String csvFilePath = "src/main/java/com/solvd/laba/lecture2/resources/customer_data";
         CustomerDataLoader.loadCustomerDataFromCSV(csvFilePath, customer);
         // Create and add projects to the company
         Project project = new Project("Project Name", "Project Description", ProjectSize.MEDIUM, customer, LocalDate.now(),LocalDate.of(2023,12,31));
