@@ -5,7 +5,7 @@ public enum ProjectSize {
     MEDIUM(250),
     LARGE(500);
 
-    private int estimatedTime;
+    private final int estimatedTime;
 
 
     ProjectSize(int estimatedTime) {

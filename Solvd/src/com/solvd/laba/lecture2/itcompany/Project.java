@@ -26,13 +26,13 @@ public class Project  implements ProjectOperationsInterface{
         projectCounter = 0;
     }
 
-    public Project(String projectName, String description, ProjectSize size, Customer customer) {
+    public Project(String projectName, String description, ProjectSize size, Customer customer, LocalDate dueDate, LocalDate completionDate) {
         this.projectName = projectName;
         this.description = description;
         this.size = size;
         this.customer = customer;
-        this.dueDate = null;
-        this.completionDate = null;
+        this.dueDate = dueDate;
+        this.completionDate = completionDate;
         this.assignedTeam = null;
 
         developers = new ArrayList<>();

@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,17 +25,19 @@ public class Main {
         String csvFilePath = "src/com/solvd/laba/lecture2/resources/customer_data";
         CustomerDataLoader.loadCustomerDataFromCSV(csvFilePath, customer);
         // Create and add projects to the company
-        Project project = new Project("Project Name", "Project Description", ProjectSize.MEDIUM, customer);
+        Project project = new Project("Project Name", "Project Description", ProjectSize.MEDIUM, customer, LocalDate.now(),LocalDate.of(2023,12,31));
         company.addProject(project);
 
         // Create and add employees to the company
         Developer developer1 = new Developer("Dev 1", 1, 3, 25.0, 40);
         Developer developer2 = new Developer("Dev 2", 2, 5, 28.0, 40);
+        Developer developer3 = new Developer("Dev 3", 3, 5, 28.0, 40);
         ProjectManager projectManager = new ProjectManager("Project Manager", 3, 8, 35.0, 40);
         Tester tester = new Tester("Tester", 4,2, 20.0, 40);
 
         company.addEmployee(developer1);
         company.addEmployee(developer2);
+        company.addEmployee(developer3);
         company.addEmployee(projectManager);
         company.addEmployee(tester);
 

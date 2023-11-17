@@ -7,16 +7,14 @@ public class Developer extends Employee  {
     public Developer(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours) {
         super(employeeName, employeeId, yearsOfWork, hourlyRate, weeklyHours);
     }
-    public void updateSalaryForProject(Project project, ProjectSize projectSize) {
-        updateSalary(project, projectSize);
-    }
+
 
 
 
     @Override
     public double evaluatePerformance(int linesOfCode) {
         // Implementation of developer performance evaluation
-        // Evaluation based on the number of lines of code written
+        //  based on the number of lines of code written
         if (linesOfCode > 1000) {
             return 5.0;
         } else if (linesOfCode > 500) {

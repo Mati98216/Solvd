@@ -6,9 +6,6 @@ public class Tester extends Employee {
     public Tester(String employeeName, int employeeId,int yearsOfWork, double hourlyRate, int weeklyHours) {
         super(employeeName, employeeId, yearsOfWork, hourlyRate, weeklyHours);
     }
-    public void updateSalaryForProject(Project project, ProjectSize projectSize) {
-        updateSalary(project, projectSize);
-    }
     @Override
     public double evaluatePerformance(int numberOfBugsFound) {
         // Implementation of tester performance evaluation

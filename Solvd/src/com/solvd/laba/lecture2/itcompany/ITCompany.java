@@ -6,19 +6,19 @@ import java.util.List;
 public final class ITCompany {
     private final String name;
     private final int yearFounded;
-    private  double revenue;
-    private List<Project> projects;
-    private List<Employee> employees;
+    private double revenue;
+    private CustomLinkedList<Project> projects;
+    private CustomLinkedList<Employee> employees;
     private Team assignedTeam;
-
 
     public ITCompany(String name, int yearFounded, double revenue) {
         this.name = name;
         this.yearFounded = yearFounded;
         this.revenue = revenue;
-        this.projects = new ArrayList<>();
-        this.employees = new ArrayList<>();
+        this.projects = new CustomLinkedList<>();
+        this.employees = new CustomLinkedList<>();
     }
+
     public void addProject(Project project) {
         projects.add(project);
     }
@@ -26,7 +26,6 @@ public final class ITCompany {
     public void addEmployee(Employee employee) {
         employees.add(employee);
     }
-
     public void assignTeam(Team team) {
         this.assignedTeam = team;
     }
@@ -50,17 +49,12 @@ public final class ITCompany {
 
         System.out.println("Team Members:");
         for (Employee employee : teamMembers) {
-            if (employee instanceof Developer) {
-                ((Developer) employee).updateSalaryForProject(project, project.getSize());
-            } else if (employee instanceof ProjectManager) {
-                ((ProjectManager) employee).updateSalaryForProject(project, project.getSize());
-            } else if (employee instanceof Tester) {
-                ((Tester) employee).updateSalaryForProject(project, project.getSize());
-            }
+            employee.calculateSalary(project,project.getSize());
             System.out.println(employee.toString());
         }
     }
-    public List<Employee> getEmployees() {
+
+    public CustomLinkedList<Employee> getEmployees() {
         return employees;
     }
 

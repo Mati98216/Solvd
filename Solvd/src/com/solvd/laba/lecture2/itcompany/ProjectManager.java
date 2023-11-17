@@ -6,9 +6,7 @@ public class ProjectManager extends Employee {
     public ProjectManager(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours) {
         super(employeeName, employeeId, yearsOfWork, hourlyRate, weeklyHours);
     }
-    public void updateSalaryForProject(Project project, ProjectSize projectSize) {
-        updateSalary(project, projectSize);
-    }
+
     @Override
     public double evaluatePerformance(int projectsDeliveredOnTime) {
         // Implementation of project manager performance evaluation

@@ -22,6 +22,7 @@ public abstract class Employee implements EmployeeActionsInterface {
         this.yearsOfWork = yearsOfWork;
         this.hourlyRate = hourlyRate;
         this.weeklyHours = weeklyHours;
+        calculateSalary(null, null);
     }
 
     public String getEmployeeName() {
@@ -85,7 +86,7 @@ public abstract class Employee implements EmployeeActionsInterface {
         return bonus;
     }
 
-    protected void updateSalary(Project lastCompletedProject, ProjectSize projectSize) throws SalaryUpdateException {
+    protected void calculateSalary(Project lastCompletedProject, ProjectSize projectSize) throws SalaryUpdateException {
         try {
             double newSalary = calculateBaseSalary() + calculateBonusForYearsOfWork();
             if (lastCompletedProject != null && lastCompletedProject.getDueDate() != null && lastCompletedProject.getCompletionDate() != null) {
