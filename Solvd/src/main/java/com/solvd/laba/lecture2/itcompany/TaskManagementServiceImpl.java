@@ -2,6 +2,10 @@ package com.solvd.laba.lecture2.itcompany;
 
 import com.solvd.laba.lecture2.exceptions.TaskManagementException;
 import com.solvd.laba.lecture2.interfaces.TaskManagementServiceInterface;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import static com.solvd.laba.lecture2.app.Main.logger;
 
 public class TaskManagementServiceImpl implements TaskManagementServiceInterface {
     @Override
@@ -10,8 +14,7 @@ public class TaskManagementServiceImpl implements TaskManagementServiceInterface
             throw new TaskManagementException("Invalid task creation parameters.");
         }
 
-        System.out.println("Task created for project " + project.getProjectName() +
-                ": " + taskName + " - " + description);
+        logger.info("Task created for project {}: {} - {}", project.getProjectName(), taskName, description);
     }
 
     @Override
@@ -20,8 +23,7 @@ public class TaskManagementServiceImpl implements TaskManagementServiceInterface
             throw new TaskManagementException("Invalid task assignment parameters.");
         }
 
-        System.out.println("Task assigned to team " + team.getTeamName() +
-                ": " + taskName);
+        logger.info("Task assigned to team {}: {}", team.getTeamName(), taskName);
     }
 
     @Override
@@ -30,7 +32,6 @@ public class TaskManagementServiceImpl implements TaskManagementServiceInterface
             throw new TaskManagementException("Invalid task completion parameters.");
         }
 
-        System.out.println("Task completed by team " + team.getTeamName() +
-                ": " + taskName);
+        logger.info("Task completed by team {}: {}", team.getTeamName(), taskName);
     }
 }
