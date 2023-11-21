@@ -4,15 +4,17 @@ import com.solvd.laba.lecture2.exceptions.TeamManagementException;
 import com.solvd.laba.lecture2.interfaces.TeamOperationsInterface;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Team implements TeamOperationsInterface {
     private String teamName;
-    private List<Employee> teamMembers;
+    private Set<Employee> teamMembers;
 
     public Team(String teamName) {
         this.teamName = teamName;
-        this.teamMembers = new ArrayList<>();
+        this.teamMembers = new LinkedHashSet<>();
     }
     @Override
     public void addTeamMember(Employee employee) {
@@ -27,7 +29,7 @@ public class Team implements TeamOperationsInterface {
         teamMembers.remove(employee);
     }
 
-    public List<Employee> getTeamMembers() {
+    public Set<Employee> getTeamMembers() {
         return teamMembers;
     }
 

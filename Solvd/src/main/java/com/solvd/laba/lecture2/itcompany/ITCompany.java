@@ -1,12 +1,15 @@
 package com.solvd.laba.lecture2.itcompany;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public final class ITCompany {
     private final String name;
     private final int yearFounded;
     private double revenue;
-    private CustomLinkedList<Project> projects;
+    private Map<String,Project> projects;
     private CustomLinkedList<Employee> employees;
     private Team assignedTeam;
 
@@ -14,12 +17,12 @@ public final class ITCompany {
         this.name = name;
         this.yearFounded = yearFounded;
         this.revenue = revenue;
-        this.projects = new CustomLinkedList<>();
+        this.projects = new HashMap<>();
         this.employees = new CustomLinkedList<>();
     }
 
     public void addProject(Project project) {
-        projects.add(project);
+        projects.put(project.getProjectName(),project);
     }
 
     public void addEmployee(Employee employee) {
@@ -44,7 +47,7 @@ public final class ITCompany {
             return;
         }
 
-        List<Employee> teamMembers = assignedTeam.getTeamMembers();
+        Set<Employee> teamMembers = assignedTeam.getTeamMembers();
 
         System.out.println("Team Members:");
         for (Employee employee : teamMembers) {
@@ -60,7 +63,7 @@ public final class ITCompany {
     public double calculateTotalProjectCost(Team team) {
         double totalProjectCost = 0.0;
 
-        for (Project project : projects) {
+        for (Project project : projects.values()) {
             totalProjectCost += project.calculateProjectCost(team);
         }
 
