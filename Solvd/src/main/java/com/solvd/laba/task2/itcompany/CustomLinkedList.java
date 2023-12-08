@@ -1,6 +1,8 @@
 package com.solvd.laba.task2.itcompany;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -43,6 +45,13 @@ public class CustomLinkedList<T> implements Iterable<T> {
                 return data;
             }
         };
+    }
+    public List<T> toList() {
+        List<T> list = new ArrayList<>();
+        for (T item : this) {
+            list.add(item);
+        }
+        return list;
     }
     public Stream<T> stream() {
         Iterable<T> iterable = () -> iterator();

@@ -54,8 +54,11 @@ public class Main {
             developer1.setEmployeeId(id);
         };
         //Custom Lambda
-        developer1.executeCustomLambdaFunctions(
-                (emp, threshold) -> emp.getSalary() > threshold,
+        developer1.executeSalaryChecker(
+                (emp, threshold) -> emp.getSalary() > threshold
+
+        );
+        developer1.executeupdateHours(
                 (emp, newHours) -> {
                     emp.setWeeklyHours(newHours);
                 },

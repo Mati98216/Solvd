@@ -159,22 +159,27 @@ public class Project  implements ProjectOperationsInterface {
         return minCost + discount + monthlyServiceCost + projectCategoryCost;
     }
 
-    @Override
     public void assignToTeam(Team team) {
-        if (team == null || team.getTeamMembers().isEmpty()) {
-            throw new ProjectAssignmentException("Cannot assign an empty or null team to the project.");
-        }
-
-        for (Employee employee : team.getTeamMembers()) {
-            if (employee instanceof Developer) {
-                developers.add((Developer) employee);
-            } else if (employee instanceof ProjectManager) {
-                projectManagers.add((ProjectManager) employee);
-            } else if (employee instanceof Tester) {
-                testers.add((Tester) employee);
+        try {
+            if (team == null || team.getTeamMembers().isEmpty()) {
+                throw new ProjectAssignmentException("Cannot assign an empty or null team to the project.");
             }
+
+            for (Employee employee : team.getTeamMembers()) {
+                if (employee instanceof Developer) {
+                    developers.add((Developer) employee);
+                } else if (employee instanceof ProjectManager) {
+                    projectManagers.add((ProjectManager) employee);
+                } else if (employee instanceof Tester) {
+                    testers.add((Tester) employee);
+                }
+            }
+        } catch (ProjectAssignmentException e) {
+            System.err.println("Project Assignment Exception: " + e.getMessage());
+
         }
     }
+
     public static int getProjectCounter() {
         return projectCounter;
     }

@@ -8,6 +8,8 @@ import com.solvd.laba.task2.interfaces.Task;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import static com.solvd.laba.task2.app.Main.logger;
 
@@ -79,10 +81,12 @@ public abstract class Employee implements EmployeeActionsInterface {
         this.weeklyHours = weeklyHours;
     }
 
-    public void executeCustomLambdaFunctions(SalaryChecker<Employee> salaryChecker, HoursUpdater<Employee> hoursUpdater,int newHoursWorked) {
+    public void executeSalaryChecker(SalaryChecker<Employee> salaryChecker) {
         boolean isSalaryHigh = salaryChecker.checkSalary(this, 50000.0);
         logger.info("Is salary higher than $50000? " + isSalaryHigh);
 
+    }
+    public void executeupdateHours(HoursUpdater<Employee> hoursUpdater,int newHoursWorked) {
         hoursUpdater.updateHoursWorked(this, newHoursWorked);
         logger.info("Updated weekly hours to: " + newHoursWorked);
 
@@ -188,7 +192,14 @@ public abstract class Employee implements EmployeeActionsInterface {
     public List<Employee> searchEmployees(String searchTerm) {
         List<Employee> searchResults = new ArrayList<>();
 
-        if (employeeName.toLowerCase().contains(searchTerm.toLowerCase())) {
+
+        Pattern pattern = Pattern.compile(".*" + Pattern.quote(searchTerm) + ".*", Pattern.CASE_INSENSITIVE);
+
+
+        Matcher matcher = pattern.matcher(employeeName);
+
+
+        if (matcher.matches()) {
             searchResults.add(this);
         }
 
