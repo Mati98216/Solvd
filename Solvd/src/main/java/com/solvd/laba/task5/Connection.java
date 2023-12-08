@@ -1,14 +1,21 @@
 package com.solvd.laba.task5;
 
-// Mocked Connection class
+import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
 class Connection {
-    // Simulating some work
-    public void executeQuery(String query) {
-        System.out.println("Executing query: " + query);
+    private int connectionId;
+
+    public Connection(int id) {
+        this.connectionId = id;
     }
 
-    // Simulating releasing the connection
-    public void release() {
-        System.out.println("Connection released.");
+    public void connect() {
+        System.out.println("Connected to Connection ID: " + connectionId);
+    }
+
+    public void disconnect() {
+        System.out.println("Disconnected Connection ID: " + connectionId);
     }
 }
+
