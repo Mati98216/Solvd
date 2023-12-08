@@ -47,10 +47,8 @@ public class Team implements TeamOperationsInterface {
                 .collect(Collectors.toList());
     }
     public List<Task> getAllTasksInTeam() {
-        List<Task> allTasks = new ArrayList<>();
-        for (Employee employee : teamMembers) {
-            allTasks.addAll(employee.getAssignedTasks());
-        }
-        return allTasks;
+        return teamMembers.stream()
+                .flatMap(employee -> employee.getAssignedTasks().stream())
+                .collect(Collectors.toList());
     }
 }

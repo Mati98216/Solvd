@@ -48,10 +48,11 @@ public final class ITCompany {
         Set<Employee> teamMembers = assignedTeam.getTeamMembers();
 
         System.out.println("Team Members:");
-        for (Employee employee : teamMembers) {
-            employee.calculateSalary(project,project.getSize());
-            System.out.println(employee.toString());
-        }
+        teamMembers.stream()
+                .forEach(employee -> {
+                    employee.calculateSalary(project, project.getSize());
+                    System.out.println(employee.toString());
+                });
     }
 
     public CustomLinkedList<Employee> getEmployees() {

@@ -144,16 +144,13 @@ public class Project  implements ProjectOperationsInterface {
     }
     @Override
     public double calculateProjectCost(Team team) {
-        double teamSalaries = 0.0;
-
-        for (Employee employee : team.getTeamMembers()) {
-            teamSalaries += employee.getSalary();
-        }
+        double teamSalaries = team.getTeamMembers().stream()
+                .mapToDouble(Employee::getSalary)
+                .sum();
 
         double minCost = teamSalaries * 1.5;
         double discount = customer.hasPreviousProjects() ? 0 : 1000;
         double monthlyServiceCost = calculateMonthlyServiceCost();
-
         double projectCategoryCost = projectCategory != null ? projectCategory.getCost() : 0;
 
         return minCost + discount + monthlyServiceCost + projectCategoryCost;

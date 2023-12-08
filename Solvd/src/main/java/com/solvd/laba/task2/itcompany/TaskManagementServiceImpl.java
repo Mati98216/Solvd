@@ -27,23 +27,21 @@ public class TaskManagementServiceImpl implements TaskManagementServiceInterface
             throw new TaskManagementException("Invalid task assignment parameters.");
         }
 
-        List<Employee> employees = new ArrayList<>(team.getTeamMembers());
-
-        for (Employee employee : employees) {
-            if (employee.getAssignedTasks().size() < 5) {
-                EmployeeType employeeType = getEmployeeTypeBasedOnRole(employee);
-
-                if (employeeType != null) {
-                    try {
-                        employee.createTask(taskName, "Task Description", taskPriority, employeeType);
-                        logger.info("Task assigned to {} {}: {}", employeeType.getDescription(), employee.getEmployeeName(), taskName);
-                        break;
-                    } catch (TaskManagementException e) {
-                        logger.error("Failed to assign task to {} {}: {}", employeeType.getDescription(), employee.getEmployeeName(), e.getMessage());
+        team.getTeamMembers().stream()
+                .filter(employee -> employee.getAssignedTasks().size() < 5)
+                .map(employee -> {
+                    EmployeeType employeeType = getEmployeeTypeBasedOnRole(employee);
+                    if (employeeType != null) {
+                        try {
+                            employee.createTask(taskName, "Task Description", taskPriority, employeeType);
+                            logger.info("Task assigned to {} {}: {}", employeeType.getDescription(), employee.getEmployeeName(), taskName);
+                        } catch (TaskManagementException e) {
+                            logger.error("Failed to assign task to {} {}: {}", employeeType.getDescription(), employee.getEmployeeName(), e.getMessage());
+                        }
                     }
-                }
-            }
-        }
+                    return employee;
+                })
+                .findFirst(); // you may perform further operations or actions here
     }
 
     @Override
