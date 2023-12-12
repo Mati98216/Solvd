@@ -1,6 +1,9 @@
 package com.solvd.laba.task2.itcompany;
 
+import java.util.List;
 import java.util.Objects;
+
+import static com.solvd.laba.task2.app.Main.logger;
 
 public class ProjectManager extends Employee {
     public ProjectManager(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours, int age) {
@@ -18,6 +21,18 @@ public class ProjectManager extends Employee {
         } else {
             return 3.0;
         }
+    }
+    @Override
+    public List<Employee> searchEmployees(String searchTerm) {
+        List<Employee> searchResults = super.searchEmployees(searchTerm);
+
+        for (Employee employee : searchResults) {
+            if (employee instanceof ProjectManager) {
+                logger.info("Similar name found for Project Manager: " + employee.getEmployeeName());
+            }
+        }
+
+        return searchResults;
     }
 
     @Override

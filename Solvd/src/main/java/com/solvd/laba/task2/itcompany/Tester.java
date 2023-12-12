@@ -1,6 +1,9 @@
 package com.solvd.laba.task2.itcompany;
 
+import java.util.List;
 import java.util.Objects;
+
+import static com.solvd.laba.task2.app.Main.logger;
 
 public class Tester extends Employee {
     public Tester(String employeeName, int employeeId,int yearsOfWork, double hourlyRate, int weeklyHours, int age) {
@@ -20,6 +23,18 @@ public class Tester extends Employee {
         }
     }
 
+    @Override
+    public List<Employee> searchEmployees(String searchTerm) {
+        List<Employee> searchResults = super.searchEmployees(searchTerm);
+
+        for (Employee employee : searchResults) {
+            if (employee instanceof Tester) {
+                logger.info("Similar name found for Tester: " + employee.getEmployeeName());
+            }
+        }
+
+        return searchResults;
+    }
     @Override
     public String toString() {
         return "Tester: " + employeeName + ", Salary: " + salary;

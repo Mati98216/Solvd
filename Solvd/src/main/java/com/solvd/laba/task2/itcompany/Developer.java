@@ -1,13 +1,28 @@
 package com.solvd.laba.task2.itcompany;
 
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+
+import static com.solvd.laba.task2.app.Main.logger;
 
 public class Developer extends Employee  {
     public Developer(String employeeName, int employeeId, int yearsOfWork, double hourlyRate, int weeklyHours, int age) {
         super(employeeName, employeeId, yearsOfWork, hourlyRate, weeklyHours, age);
     }
+    @Override
+    public List<Employee> searchEmployees(String searchTerm) {
+        List<Employee> searchResults = super.searchEmployees(searchTerm);
 
+        for (Employee employee : searchResults) {
+            if (employee instanceof Developer) {
+                logger.info("Similar name found for Developer: " + employee.getEmployeeName());
+            }
+        }
+
+        return searchResults;
+    }
 
 
 

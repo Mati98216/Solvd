@@ -3,8 +3,9 @@ package com.solvd.laba.task2.itcompany;
 import com.solvd.laba.task2.exceptions.TeamManagementException;
 import com.solvd.laba.task2.interfaces.Task;
 import com.solvd.laba.task2.interfaces.TeamOperationsInterface;
-
+import java.util.AbstractMap.SimpleEntry;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Team implements TeamOperationsInterface {
@@ -45,6 +46,13 @@ public class Team implements TeamOperationsInterface {
         return allTasks.stream()
                 .sorted(Comparator.comparingInt(task -> -task.getPriority().getPriority()))
                 .collect(Collectors.toList());
+    }
+    public Optional<SimpleEntry<Employee, Task>> findTeamMemberWithMatchingTask(Predicate<Task> taskPredicate) {
+        return teamMembers.stream()
+                .flatMap(employee -> employee.getAssignedTasks().stream()
+                        .filter(taskPredicate)
+                        .map(task -> new SimpleEntry<>(employee, task)))
+                .findAny();
     }
     public List<Task> getAllTasksInTeam() {
         return teamMembers.stream()

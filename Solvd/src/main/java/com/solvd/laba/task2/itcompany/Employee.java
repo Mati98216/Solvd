@@ -1,5 +1,6 @@
 package com.solvd.laba.task2.itcompany;
 
+import com.solvd.laba.task2.exceptions.EmployeeDataException;
 import com.solvd.laba.task2.exceptions.SalaryUpdateException;
 import com.solvd.laba.task2.exceptions.TaskManagementException;
 import com.solvd.laba.task2.interfaces.EmployeeActionsInterface;
@@ -48,7 +49,16 @@ public abstract class Employee implements EmployeeActionsInterface {
         assignedTasks.add(task);
     }
     public void updateEmployeeName(Function<String, String> nameUpdater) {
-        setEmployeeName(nameUpdater.apply(getEmployeeName()));
+        try {
+            String updatedName = nameUpdater.apply(getEmployeeName());
+            if (updatedName == null || updatedName.trim().isEmpty()) {
+            }
+            setEmployeeName(updatedName);
+        } catch (EmployeeDataException e) {
+
+           logger.error("Error while updating employee name: " + e.getMessage());
+
+        }
     }
     public void displayEmployeeInfo(Consumer<Employee> infoConsumer) {
         infoConsumer.accept(this);
@@ -93,9 +103,6 @@ public abstract class Employee implements EmployeeActionsInterface {
     }
     public boolean hasMoreExperience(BiPredicate<Integer, Integer> experiencePredicate, int currentYears, int targetYears) {
         return experiencePredicate.test(currentYears, targetYears);
-    }
-    public void updateEmployeeData(BiConsumer<String, Integer> dataUpdater, String newName,int yearsOfWork,double hourlyrate , int newId) {
-        dataUpdater.accept(newName, newId);
     }
     public void createTask(String taskName, String description, TaskPriority priority, EmployeeType employeeType) throws TaskManagementException {
         if (employeeType == null) {

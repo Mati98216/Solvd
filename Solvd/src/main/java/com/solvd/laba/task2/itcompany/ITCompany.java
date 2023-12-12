@@ -1,9 +1,9 @@
 package com.solvd.laba.task2.itcompany;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.function.Predicate;
+
+import static com.solvd.laba.task2.app.Main.logger;
 
 public final class ITCompany {
     private final String name;
@@ -41,17 +41,17 @@ public final class ITCompany {
         Team assignedTeam = project.getAssignedTeam();
 
         if (assignedTeam == null) {
-            System.out.println("No team assigned to the project.");
+            logger.info("No team assigned to the project.");
             return;
         }
 
         Set<Employee> teamMembers = assignedTeam.getTeamMembers();
 
-        System.out.println("Team Members:");
+        logger.info("Team Members:");
         teamMembers.stream()
                 .forEach(employee -> {
                     employee.calculateSalary(project, project.getSize());
-                    System.out.println(employee.toString());
+                    logger.info(employee.toString());
                 });
     }
 
@@ -67,6 +67,24 @@ public final class ITCompany {
         }
 
         return totalProjectCost;
+    }
+    public void searchEmployeesByAge(Predicate<Employee> agePredicate, int age) {
+        employees.stream()
+                .filter(agePredicate)
+                .forEach(emp -> logger.info(emp.getEmployeeName() + " is older than " + age + " years."));
+    }
+    public void searchEmployeesByType(ITCompany company, String searchTerm, Class<? extends Employee> employeeType) {
+        CustomLinkedList<Employee> employees = company.getEmployees();
+
+        employees.stream()
+                .filter(employeeType::isInstance)
+                .map(employeeType::cast)
+                .forEach(employee -> {
+                    List<Employee> searchResults = employee.searchEmployees(searchTerm);
+                    for (Employee result : searchResults) {
+                        logger.info(result.toString());
+                    }
+                });
     }
     public String getName() {
         return name;

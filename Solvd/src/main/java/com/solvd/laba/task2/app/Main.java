@@ -9,10 +9,13 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.BiPredicate;
+import java.util.function.Predicate;
 
 
 public class Main {
@@ -68,8 +71,6 @@ public class Main {
                 (emp, age) -> emp.getAge() >= age,
                 26
         );
-        developer1.updateEmployeeData(dataUpdater, "New Developer Name", 15,40.0,32);
-        logger.info("Updated employee data: " + developer1.getEmployeeName() + ", ID: " + developer1.getEmployeeId());
         // Create a team and add employees to it
         Team team = new Team("Development Team");
         team.addTeamMember(developer1);
@@ -101,6 +102,19 @@ public class Main {
         for (Employee result : searchResults) {
             logger.info(result.toString());
         }
+        // Dev
+        company.searchEmployeesByType(company, "Dev", Developer.class);
+
+        // Tester
+        company.searchEmployeesByType(company, "Tester", Tester.class);
+
+        // ProjectManager
+        company.searchEmployeesByType(company, "Project Manager", ProjectManager.class);
+        // Search by Age
+        Predicate<Employee> isOlderThan35 = emp -> emp.getAge() > 35;
+        company.searchEmployeesByAge(isOlderThan35,35);
+        // Updating project Size
+        project.incrementProjectSize(size -> ProjectSize.LARGE);
         Service service1 = new Service("Service 1", 50.0, "Description 1");
         Service service2 = new Service("Service 2", 75.0, "Description 2");
 
@@ -141,6 +155,20 @@ public class Main {
         for (Task task : tasksByPriority) {
             logger.info(task.getTaskName() + " - " + task.getPriority().getDescription());
         }
+        Predicate<Task> highPriorityPredicate = task -> task.getPriority() == TaskPriority.HIGH;
+
+        // Call the method to find any team member with a task that matches the condition
+        Optional<AbstractMap.SimpleEntry<Employee, Task>> matchingTaskInfo = team.findTeamMemberWithMatchingTask(highPriorityPredicate);
+
+        // Check if there is a match and access the task and employee information
+        matchingTaskInfo.ifPresent(entry -> {
+            Employee employee = entry.getKey();
+            Task task = entry.getValue();
+
+            logger.info("Found a matching task with HIGH priority:");
+            logger.info("Employee: " + employee.getEmployeeName());
+            logger.info("Task: " + task.getDescription());
+        });
         //Total employee salaries
         double totalSalaries = company.calculateTotalEmployeeSalariesUsingLambda();
         logger.info("Total employee salaries: " + totalSalaries);

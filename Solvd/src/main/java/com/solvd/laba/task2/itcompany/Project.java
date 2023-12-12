@@ -6,8 +6,10 @@ import com.solvd.laba.task2.interfaces.ProjectOperationsInterface;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.UnaryOperator;
+
+import static com.solvd.laba.task2.app.Main.logger;
 
 public class Project  implements ProjectOperationsInterface {
     private String projectName;
@@ -135,12 +137,8 @@ public class Project  implements ProjectOperationsInterface {
         }
         return 0.0;
     }
-    public <T, R> R processProjectDetails(T input1, BiFunction<T, Project, R> processor) {
-        return processor.apply(input1, this);
-    }
     public void performActionOnDescription(Consumer<String> descriptionAction) {
-        descriptionAction.accept(this.description);
-
+        descriptionAction.accept(description);
     }
     @Override
     public double calculateProjectCost(Team team) {
@@ -157,7 +155,7 @@ public class Project  implements ProjectOperationsInterface {
     }
 
     public void assignToTeam(Team team) {
-        try {
+
             if (team == null || team.getTeamMembers().isEmpty()) {
                 throw new ProjectAssignmentException("Cannot assign an empty or null team to the project.");
             }
@@ -171,10 +169,12 @@ public class Project  implements ProjectOperationsInterface {
                     testers.add((Tester) employee);
                 }
             }
-        } catch (ProjectAssignmentException e) {
-            System.err.println("Project Assignment Exception: " + e.getMessage());
-
-        }
+    }
+    public void incrementProjectSize(UnaryOperator<ProjectSize> sizeIncrementer) {
+        ProjectSize currentSize = this.getSize();
+        ProjectSize updatedSize = sizeIncrementer.apply(currentSize);
+        this.setSize(updatedSize);
+        logger.info(this.toString());
     }
 
     public static int getProjectCounter() {

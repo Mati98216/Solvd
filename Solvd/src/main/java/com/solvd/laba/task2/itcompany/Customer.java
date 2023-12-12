@@ -4,7 +4,7 @@ import com.solvd.laba.task2.exceptions.ServiceSubscriptionException;
 import com.solvd.laba.task2.interfaces.CustomerServicesInterface;
 
 import java.time.LocalDate;
-import java.util.function.Function;
+
 
 import static com.solvd.laba.task2.app.Main.logger;
 
@@ -138,15 +138,14 @@ public class Customer implements CustomerServicesInterface {
         }
     }
     private String generatePaymentInfo() {
-        Function<PaymentStatus, String> paymentDescription = status -> {
-            if (paymentDueDate != null) {
-                return "\nPayment Due Date: " + paymentDueDate +
-                        "\nPayment Status: " + status.getDescription();
-            }
-            return "";
-        };
-
-        return paymentDescription.apply(paymentStatus);
+        String paymentDescription;
+        if (paymentDueDate != null) {
+            paymentDescription = "\nPayment Due Date: " + paymentDueDate +
+                    "\nPayment Status: " + paymentStatus.getDescription();
+        } else {
+            paymentDescription = "";
+        }
+        return paymentDescription;
     }
 
     public void checkPaymentStatusAndNextDue(boolean isPaid) {
